@@ -530,6 +530,7 @@ type Story = {
   body: string[];
   seoDescription: string;
   seoSlug: string;
+  coverImage: string;
 };
 
 type Submission = {
@@ -582,6 +583,7 @@ const INITIAL_STORIES: Story[] = [
     scheduledAt: "",
     seoDescription: "",
     seoSlug: "",
+    coverImage: "https://images.unsplash.com/photo-1506863530036-1efeddceb993?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
     excerpt: "Tenía 28 años, un trabajo estable y una familia que me amaba. Y aun así, algo en mí sabía que necesitaba irme.",
     body: [
       "Tenía 28 años, un trabajo estable y una familia que me amaba. Y aun así, algo en mí sabía que necesitaba irme. No era insatisfacción, era curiosidad. Una curiosidad que me quemaba por dentro cada vez que veía un avión cruzar el cielo desde la ventana de mi oficina.",
@@ -604,6 +606,7 @@ const INITIAL_STORIES: Story[] = [
     scheduledAt: "",
     seoDescription: "",
     seoSlug: "",
+    coverImage: "https://images.unsplash.com/photo-1520460095596-52dcd38c5f20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
     excerpt: "Cerré mi negocio un martes por la mañana. Firmé los papeles, salí, me compré un café y me senté en una banca a llorar.",
     body: [
       "Cerré mi negocio un martes por la mañana. Firmé los papeles, salí, me compré un café y me senté en una banca a llorar. No porque hubiera fracasado, sino porque por fin había tomado la decisión que llevaba dos años evitando.",
@@ -626,6 +629,7 @@ const INITIAL_STORIES: Story[] = [
     scheduledAt: "",
     seoDescription: "",
     seoSlug: "",
+    coverImage: "https://images.unsplash.com/photo-1610986719243-7cdf28a29772?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
     excerpt: "Cuando le dije a mi mamá que no iría a su cumpleaños, hubo un silencio que duró segundos pero se sintió como años.",
     body: [
       "Cuando le dije a mi mamá que no iría a su cumpleaños, hubo un silencio que duró segundos pero se sintió como años. No fui por cuidarme. Por primera vez en mucho tiempo, elegí a mí misma.",
@@ -648,6 +652,7 @@ const INITIAL_STORIES: Story[] = [
     scheduledAt: "",
     seoDescription: "",
     seoSlug: "",
+    coverImage: "https://images.unsplash.com/photo-1714976694810-85add1a29c96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
     excerpt: "Pedir ayuda fue lo más difícil que he hecho. Más que cambiar de trabajo, más que terminar una relación. Porque implica admitir lo que uno lleva años callando.",
     body: [
       "Pedir ayuda fue lo más difícil que he hecho. Más que cambiar de trabajo, más que terminar una relación. Porque implica admitir lo que uno lleva años callando.",
@@ -670,6 +675,7 @@ const INITIAL_STORIES: Story[] = [
     scheduledAt: "",
     seoDescription: "",
     seoSlug: "",
+    coverImage: "https://images.unsplash.com/photo-1592837613828-4b65deb44f15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
     excerpt: "Cuando murió mi abuela, heredé sus cuadernos de recetas. No sabía que cocinarlas sería la forma en que aprendería a despedirme de ella.",
     body: [
       "Cuando murió mi abuela, heredé sus cuadernos de recetas. Tres libretas de pasta dura llenas de su letra apretada, con manchas de aceite y anotaciones al margen como 'más ajo' o 'esto le encantaba a tu tío Carlos'.",
@@ -692,6 +698,7 @@ const INITIAL_STORIES: Story[] = [
     scheduledAt: "",
     seoDescription: "",
     seoSlug: "",
+    coverImage: "https://images.unsplash.com/photo-1529218164294-0d21b06ea831?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
     excerpt: "Doce años de matrimonio. Dos hijas. Una casa bonita. Y una mujer que había olvidado completamente quién era antes de todo eso.",
     body: [
       "Doce años de matrimonio. Dos hijas. Una casa bonita. Y una mujer que había olvidado completamente quién era antes de todo eso.",
@@ -714,6 +721,7 @@ const INITIAL_STORIES: Story[] = [
     scheduledAt: "",
     seoDescription: "",
     seoSlug: "",
+    coverImage: "https://images.unsplash.com/photo-1667053508464-eb11b394df83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
     excerpt: "Tres años de ingeniería. Buenas calificaciones. Un futuro claro. Y una certeza creciente de que todo eso no tenía nada que ver conmigo.",
     body: [
       "Tres años de ingeniería. Buenas calificaciones. Un futuro claro. Y una certeza creciente de que todo eso no tenía nada que ver conmigo.",
@@ -736,6 +744,7 @@ const INITIAL_STORIES: Story[] = [
     scheduledAt: "",
     seoDescription: "",
     seoSlug: "",
+    coverImage: "https://images.unsplash.com/photo-1767958325352-fdc5ea983dcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
     excerpt: "Siempre fui de las que huye. De ciudades, de trabajos, de relaciones. Hasta que llegó Canelo y me enseñó que quedarse también puede ser valiente.",
     body: [
       "Siempre fui de las que huye. De ciudades, de trabajos, de relaciones. Lo llamaba libertad. Ahora sé que era miedo con mejor marketing.",
@@ -769,14 +778,29 @@ function StoryCard({ story, onRead, index }: { story: Story; onRead: (s: Story) 
       className="group flex cursor-pointer flex-col overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
       onClick={() => onRead(story)}
     >
-      <div className="h-1.5 w-full bg-accent" style={{ opacity: 0.4 + (index % 3) * 0.2 }} />
+      {/* Cover image */}
+      <div className="relative h-44 w-full overflow-hidden">
+        {story.coverImage ? (
+          <img
+            src={story.coverImage}
+            alt={story.title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className={`h-full w-full bg-gradient-to-br ${index % 3 === 0 ? "from-secondary to-[#173A46]" : index % 3 === 1 ? "from-accent/80 to-[#B05A10]" : "from-primary to-[#015040]"}`} />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+        <span className={`absolute left-4 top-4 rounded-full px-3 py-1 font-['Montserrat'] text-xs font-bold backdrop-blur-sm ${tagColors[story.tag] ?? "bg-white/80 text-secondary"}`}>
+          {story.tag}
+        </span>
+      </div>
+
       <div className="flex flex-1 flex-col p-6">
-        <div className="mb-4 flex items-center gap-2">
-          <span className={`rounded-full px-3 py-1 font-['Montserrat'] text-xs font-bold ${tagColors[story.tag] ?? "bg-muted text-secondary"}`}>{story.tag}</span>
-          <span className="font-['Montserrat'] text-xs text-muted-foreground">{story.readTime}</span>
+        <div className="mb-3 flex items-center gap-2">
+          <span className="font-['Montserrat'] text-xs text-muted-foreground">{story.readTime} de lectura</span>
         </div>
         <h3 className="font-['Poppins'] text-lg font-black leading-snug text-secondary transition-colors group-hover:text-accent">{story.title}</h3>
-        <p className="mt-2 flex-1 font-['Montserrat'] text-sm leading-7 text-foreground/65">{story.excerpt}</p>
+        <p className="mt-2 flex-1 font-['Montserrat'] text-sm leading-7 text-foreground/65 line-clamp-3">{story.excerpt}</p>
         <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
           <div>
             <p className="font-['Montserrat'] text-sm font-bold text-secondary">{story.author}</p>
@@ -831,13 +855,23 @@ function BlogPage({ stories, onBack, onRead }: { stories: Story[]; onBack: () =>
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               onClick={() => onRead(featured)}
-              className="group grid cursor-pointer overflow-hidden rounded-[2rem] border border-border bg-card shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl md:grid-cols-[1fr_auto]"
+              className="group cursor-pointer overflow-hidden rounded-[2rem] border border-border bg-card shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
             >
-              <div className="p-8 md:p-10">
-                <div className="mb-5 flex items-center gap-3">
-                  <span className={`rounded-full px-3 py-1 font-['Montserrat'] text-xs font-bold ${tagColors[featured.tag] ?? "bg-muted text-secondary"}`}>{featured.tag}</span>
-                  <span className="font-['Montserrat'] text-xs text-muted-foreground">{featured.readTime} de lectura</span>
+              {featured.coverImage && (
+                <div className="relative h-64 w-full overflow-hidden md:h-72">
+                  <img src={featured.coverImage} alt={featured.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+                  <span className={`absolute left-6 top-6 rounded-full px-3 py-1 font-['Montserrat'] text-xs font-bold backdrop-blur-sm ${tagColors[featured.tag] ?? "bg-white/80 text-secondary"}`}>{featured.tag}</span>
                 </div>
+              )}
+              <div className="p-8 md:p-10">
+                {!featured.coverImage && (
+                  <div className="mb-5 flex items-center gap-3">
+                    <span className={`rounded-full px-3 py-1 font-['Montserrat'] text-xs font-bold ${tagColors[featured.tag] ?? "bg-muted text-secondary"}`}>{featured.tag}</span>
+                    <span className="font-['Montserrat'] text-xs text-muted-foreground">{featured.readTime} de lectura</span>
+                  </div>
+                )}
+                {featured.coverImage && <p className="mb-3 font-['Montserrat'] text-xs text-muted-foreground">{featured.readTime} de lectura</p>}
                 <h2 className="font-['Poppins'] text-3xl font-black leading-tight text-secondary transition-colors group-hover:text-accent md:text-4xl">{featured.title}</h2>
                 <p className="mt-4 max-w-2xl font-['Lora'] text-lg italic leading-8 text-foreground/75">{featured.excerpt}</p>
                 <div className="mt-8 flex items-center gap-4">
@@ -853,7 +887,6 @@ function BlogPage({ stories, onBack, onRead }: { stories: Story[]; onBack: () =>
                   </span>
                 </div>
               </div>
-              <div className="hidden w-2 bg-accent md:block" />
             </motion.div>
           </div>
         </section>
@@ -901,7 +934,14 @@ function StoryPage({ story, onBack }: { story: Story; onBack: () => void }) {
         </nav>
       </header>
 
-      <article className="mx-auto max-w-2xl px-5 py-16 md:py-24">
+      {story.coverImage && (
+        <div className="relative h-72 w-full overflow-hidden md:h-96">
+          <img src={story.coverImage} alt={story.title} className="h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+        </div>
+      )}
+
+      <article className="mx-auto max-w-2xl px-5 py-12 md:py-16">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <div className="mb-6 flex items-center gap-3 font-['Montserrat'] text-sm text-muted-foreground">
             <span>{story.date}</span><span>·</span><span>{story.readTime} de lectura</span>
@@ -948,7 +988,7 @@ type TranscribeStep = "idle" | "uploading" | "transcribing" | "formatting" | "do
 const EMPTY_STORY: Omit<Story, "id" | "slug"> = {
   title: "", author: "", date: "", readTime: "", tag: "Resiliencia",
   featured: false, published: false, scheduledAt: "", excerpt: "", body: [""],
-  seoDescription: "", seoSlug: "",
+  seoDescription: "", seoSlug: "", coverImage: "",
 };
 
 function slugify(text: string) {
@@ -1337,7 +1377,7 @@ function AdminPanel({ stories, onBack, onSave, onDelete, onTogglePublish, onTogg
 
   const openEdit = (story: Story) => {
     setEditing(story);
-    setForm({ title: story.title, author: story.author, date: story.date, readTime: story.readTime, tag: story.tag, featured: story.featured, published: story.published, scheduledAt: story.scheduledAt ?? "", excerpt: story.excerpt, body: story.body, seoDescription: story.seoDescription ?? "", seoSlug: story.seoSlug ?? "" });
+    setForm({ title: story.title, author: story.author, date: story.date, readTime: story.readTime, tag: story.tag, featured: story.featured, published: story.published, scheduledAt: story.scheduledAt ?? "", excerpt: story.excerpt, body: story.body, seoDescription: story.seoDescription ?? "", seoSlug: story.seoSlug ?? "", coverImage: story.coverImage ?? "" });
     const html = storyToHtml(story.body);
     setEditorHtml(html);
     setEditorKey((k) => k + 1);
@@ -1770,10 +1810,63 @@ function AdminPanel({ stories, onBack, onSave, onDelete, onTogglePublish, onTogg
                 </div>
               </div>
 
+              {/* Cover image */}
+              <div className="rounded-2xl border border-border bg-white p-5">
+                <p className="mb-1 font-['Montserrat'] text-xs font-bold uppercase tracking-wider text-secondary">Imagen de portada</p>
+                <p className="mb-4 font-['Montserrat'] text-xs text-muted-foreground">Se muestra en las cards del blog</p>
+
+                {form.coverImage ? (
+                  <div className="relative overflow-hidden rounded-xl">
+                    <img src={form.coverImage} alt="Portada" className="h-36 w-full object-cover" />
+                    <button
+                      type="button"
+                      onClick={() => setForm((f) => ({ ...f, coverImage: "" }))}
+                      className="absolute right-2 top-2 flex size-7 items-center justify-center rounded-full bg-black/60 text-white hover:bg-black/80 text-sm font-bold"
+                    >✕</button>
+                  </div>
+                ) : (
+                  <div
+                    onClick={() => { const inp = document.getElementById("cover-file-input") as HTMLInputElement; inp?.click(); }}
+                    className="flex h-32 cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-border transition hover:border-accent hover:bg-accent/5"
+                  >
+                    <span className="text-xl">🖼</span>
+                    <p className="font-['Montserrat'] text-xs font-semibold text-secondary">Click para subir imagen</p>
+                    <p className="font-['Montserrat'] text-xs text-muted-foreground">JPG, PNG, WebP</p>
+                  </div>
+                )}
+
+                <input
+                  id="cover-file-input"
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (!file) return;
+                    const reader = new FileReader();
+                    reader.onload = (ev) => setForm((f) => ({ ...f, coverImage: ev.target?.result as string }));
+                    reader.readAsDataURL(file);
+                  }}
+                />
+
+                <div className="mt-3">
+                  <label className="mb-1 block font-['Montserrat'] text-xs font-semibold text-muted-foreground">O pega una URL</label>
+                  <input
+                    value={form.coverImage}
+                    onChange={(e) => setForm((f) => ({ ...f, coverImage: e.target.value }))}
+                    placeholder="https://..."
+                    className="w-full rounded-lg border border-border px-3 py-2 font-['Montserrat'] text-xs outline-none focus:border-secondary"
+                  />
+                </div>
+              </div>
+
               {/* Preview card */}
               {form.title && (
                 <div className="overflow-hidden rounded-2xl border border-border bg-white">
-                  <div className="h-1.5 w-full bg-accent" />
+                  {form.coverImage
+                    ? <img src={form.coverImage} alt="Portada" className="h-28 w-full object-cover" />
+                    : <div className="h-1.5 w-full bg-accent" />
+                  }
                   <div className="p-4">
                     <p className="font-['Montserrat'] text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">Vista previa</p>
                     <span className={`rounded-full px-2.5 py-1 font-['Montserrat'] text-xs font-bold ${tagColors[form.tag] ?? "bg-muted text-secondary"}`}>{form.tag}</span>
