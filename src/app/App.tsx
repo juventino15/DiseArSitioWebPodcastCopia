@@ -531,6 +531,7 @@ type Story = {
   seoDescription: string;
   seoSlug: string;
   coverImage: string;
+  questions: string[];
 };
 
 type Submission = {
@@ -584,6 +585,7 @@ const INITIAL_STORIES: Story[] = [
     seoDescription: "",
     seoSlug: "",
     coverImage: "https://images.unsplash.com/photo-1506863530036-1efeddceb993?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
+    questions: ["¿Hubo un momento en tu vida donde tuviste que irte sin tener todo claro?", "¿Qué te impidió dar un salto parecido al de Ana Laura? ¿O qué te ayudó a darlo?", "¿Qué significa para ti 'estar lista o listo' para algo?"],
     excerpt: "Tenía 28 años, un trabajo estable y una familia que me amaba. Y aun así, algo en mí sabía que necesitaba irme.",
     body: [
       "Tenía 28 años, un trabajo estable y una familia que me amaba. Y aun así, algo en mí sabía que necesitaba irme. No era insatisfacción, era curiosidad. Una curiosidad que me quemaba por dentro cada vez que veía un avión cruzar el cielo desde la ventana de mi oficina.",
@@ -607,6 +609,7 @@ const INITIAL_STORIES: Story[] = [
     seoDescription: "",
     seoSlug: "",
     coverImage: "https://images.unsplash.com/photo-1520460095596-52dcd38c5f20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
+    questions: ["¿Tú también has cerrado algo que te costó mucho construir? ¿Cómo lo viviste?", "¿Qué romanticizamos del emprendimiento que nadie nos dice antes de empezar?", "¿Cuándo supiste que era momento de soltar algo que ya no funcionaba?"],
     excerpt: "Cerré mi negocio un martes por la mañana. Firmé los papeles, salí, me compré un café y me senté en una banca a llorar.",
     body: [
       "Cerré mi negocio un martes por la mañana. Firmé los papeles, salí, me compré un café y me senté en una banca a llorar. No porque hubiera fracasado, sino porque por fin había tomado la decisión que llevaba dos años evitando.",
@@ -630,6 +633,7 @@ const INITIAL_STORIES: Story[] = [
     seoDescription: "",
     seoSlug: "",
     coverImage: "https://images.unsplash.com/photo-1610986719243-7cdf28a29772?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
+    questions: ["¿Hay algún límite que te costó mucho trabajo poner con alguien que quieres?", "¿Cómo cambió una relación importante cuando empezaste a decir que no?", "¿En tu familia, el amor se demostró más con presencia o con palabras?"],
     excerpt: "Cuando le dije a mi mamá que no iría a su cumpleaños, hubo un silencio que duró segundos pero se sintió como años.",
     body: [
       "Cuando le dije a mi mamá que no iría a su cumpleaños, hubo un silencio que duró segundos pero se sintió como años. No fui por cuidarme. Por primera vez en mucho tiempo, elegí a mí misma.",
@@ -653,6 +657,7 @@ const INITIAL_STORIES: Story[] = [
     seoDescription: "",
     seoSlug: "",
     coverImage: "https://images.unsplash.com/photo-1714976694810-85add1a29c96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
+    questions: ["¿Cuánto tiempo tardaste en pedir ayuda cuando la necesitabas? ¿Qué te frenó?", "¿Qué te enseñó sobre ti mismo una crisis que no esperabas tener?", "¿Cómo describes la diferencia entre estar bien y estar presente?"],
     excerpt: "Pedir ayuda fue lo más difícil que he hecho. Más que cambiar de trabajo, más que terminar una relación. Porque implica admitir lo que uno lleva años callando.",
     body: [
       "Pedir ayuda fue lo más difícil que he hecho. Más que cambiar de trabajo, más que terminar una relación. Porque implica admitir lo que uno lleva años callando.",
@@ -676,6 +681,7 @@ const INITIAL_STORIES: Story[] = [
     seoDescription: "",
     seoSlug: "",
     coverImage: "https://images.unsplash.com/photo-1592837613828-4b65deb44f15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
+    questions: ["¿Qué ritual o hábito te ayudó a procesar una pérdida?", "¿Hay algo que heredaste de alguien que ya no está que te define hoy?", "¿Cómo describes tu propio duelo? ¿Se parece al que describes Sofía o es completamente diferente?"],
     excerpt: "Cuando murió mi abuela, heredé sus cuadernos de recetas. No sabía que cocinarlas sería la forma en que aprendería a despedirme de ella.",
     body: [
       "Cuando murió mi abuela, heredé sus cuadernos de recetas. Tres libretas de pasta dura llenas de su letra apretada, con manchas de aceite y anotaciones al margen como 'más ajo' o 'esto le encantaba a tu tío Carlos'.",
@@ -699,6 +705,7 @@ const INITIAL_STORIES: Story[] = [
     seoDescription: "",
     seoSlug: "",
     coverImage: "https://images.unsplash.com/photo-1529218164294-0d21b06ea831?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
+    questions: ["¿Hubo un momento en que dejaste de reconocerte dentro de una relación o rol? ¿Cómo te diste cuenta?", "¿Qué significa para ti volver a ti mismo después de perderte?", "¿Qué le dirías a alguien que siente que 'tiene todo' pero algo importante falta?"],
     excerpt: "Doce años de matrimonio. Dos hijas. Una casa bonita. Y una mujer que había olvidado completamente quién era antes de todo eso.",
     body: [
       "Doce años de matrimonio. Dos hijas. Una casa bonita. Y una mujer que había olvidado completamente quién era antes de todo eso.",
@@ -722,6 +729,7 @@ const INITIAL_STORIES: Story[] = [
     seoDescription: "",
     seoSlug: "",
     coverImage: "https://images.unsplash.com/photo-1667053508464-eb11b394df83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
+    questions: ["¿Hay algo que siempre quisiste hacer pero nunca te diste permiso de intentar?", "¿Qué carrera, rol o camino seguiste más por expectativas de otros que por elección propia?", "¿Qué dirías hoy a alguien que está pensando en cambiar de rumbo profesional?"],
     excerpt: "Tres años de ingeniería. Buenas calificaciones. Un futuro claro. Y una certeza creciente de que todo eso no tenía nada que ver conmigo.",
     body: [
       "Tres años de ingeniería. Buenas calificaciones. Un futuro claro. Y una certeza creciente de que todo eso no tenía nada que ver conmigo.",
@@ -745,6 +753,7 @@ const INITIAL_STORIES: Story[] = [
     seoDescription: "",
     seoSlug: "",
     coverImage: "https://images.unsplash.com/photo-1767958325352-fdc5ea983dcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
+    questions: ["¿Hay algo o alguien que te ancló en un momento en que todo en ti quería escapar?", "¿Cómo describes la diferencia entre huir y soltar?", "¿Qué aprendiste sobre ti cuando decidiste quedarte en lugar de irte?"],
     excerpt: "Siempre fui de las que huye. De ciudades, de trabajos, de relaciones. Hasta que llegó Canelo y me enseñó que quedarse también puede ser valiente.",
     body: [
       "Siempre fui de las que huye. De ciudades, de trabajos, de relaciones. Lo llamaba libertad. Ahora sé que era miedo con mejor marketing.",
@@ -922,6 +931,240 @@ function BlogPage({ stories, onBack, onRead }: { stories: Story[]; onBack: () =>
   );
 }
 
+type Reaction = "❤️" | "🙌" | "💭" | "✨";
+const REACTIONS: Reaction[] = ["❤️", "🙌", "💭", "✨"];
+const REACTION_LABELS: Record<Reaction, string> = { "❤️": "Me tocó", "🙌": "Así fue", "💭": "Me hizo pensar", "✨": "Inspirador" };
+
+type StoryResponse = {
+  id: number;
+  author: string;
+  text: string;
+  date: string;
+  questionIndex: number;
+  reactions: Record<Reaction, number>;
+};
+
+const MOCK_RESPONSES: StoryResponse[] = [
+  { id: 1, author: "Paulina G.", text: "Yo también lo viví. Me fui a España sin tener nada claro y lo que creí que iba a ser un fracaso terminó siendo lo mejor que me pasó. La incertidumbre es rara, te enseña mucho.", date: "hace 2 días", questionIndex: 0, reactions: { "❤️": 8, "🙌": 5, "💭": 2, "✨": 3 } },
+  { id: 2, author: "Andrés T.", text: "Siempre pensé que 'estar lista' significaba no tener miedo. Ahora entiendo que significa ir aunque tengas miedo.", date: "hace 4 días", questionIndex: 2, reactions: { "❤️": 14, "🙌": 3, "💭": 6, "✨": 4 } },
+  { id: 3, author: "Marce V.", text: "Mi abuela siempre decía 'uno sale cuando ya no cabe'. Nunca entendí eso hasta que renuncié a mi trabajo sin tener otro. Ahora lo entiendo completamente.", date: "hace 1 semana", questionIndex: 0, reactions: { "❤️": 21, "🙌": 9, "💭": 4, "✨": 7 } },
+];
+
+function ConversationSection({ story }: { story: Story }) {
+  const [activeQ, setActiveQ] = useState<number | null>(null);
+  const [responses, setResponses] = useState<StoryResponse[]>(MOCK_RESPONSES);
+  const [name, setName] = useState("");
+  const [text, setText] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [expandedResponses, setExpandedResponses] = useState<Set<number>>(new Set([0]));
+  const [votedReactions, setVotedReactions] = useState<Record<number, Set<Reaction>>>({});
+
+  const toggleReaction = (responseId: number, emoji: Reaction) => {
+    setVotedReactions((prev) => {
+      const current = new Set(prev[responseId] ?? []);
+      const alreadyVoted = current.has(emoji);
+      if (alreadyVoted) current.delete(emoji); else current.add(emoji);
+      return { ...prev, [responseId]: current };
+    });
+    setResponses((prev) => prev.map((r) => {
+      if (r.id !== responseId) return r;
+      const alreadyVoted = votedReactions[responseId]?.has(emoji);
+      return { ...r, reactions: { ...r.reactions, [emoji]: r.reactions[emoji] + (alreadyVoted ? -1 : 1) } };
+    }));
+  };
+
+  const questions = story.questions?.length ? story.questions : [
+    "¿Qué cambió en tu forma de ver este tema después de leer esta historia?",
+    "¿Hay alguna experiencia propia que te hizo pensar diferente?",
+    "¿Qué conversación te gustaría tener a partir de esto?",
+  ];
+
+  const handleSubmit = () => {
+    if (!text.trim()) return;
+    const newResponse: StoryResponse = {
+      id: Date.now(),
+      author: name.trim() || "Anónimo",
+      text: text.trim(),
+      date: "ahora mismo",
+      questionIndex: activeQ!,
+      reactions: { "❤️": 0, "🙌": 0, "💭": 0, "✨": 0 },
+    };
+    setResponses((prev) => [newResponse, ...prev]);
+    setText("");
+    setName("");
+    setSubmitted(true);
+    setActiveQ(null);
+    setTimeout(() => setSubmitted(false), 4000);
+  };
+
+  const toggleResponses = (qi: number) => {
+    setExpandedResponses((prev) => {
+      const next = new Set(prev);
+      if (next.has(qi)) next.delete(qi); else next.add(qi);
+      return next;
+    });
+  };
+
+  return (
+    <section className="mt-16 border-t border-border pt-16">
+      {/* Header */}
+      <div className="mb-10">
+        <p className="mb-2 font-['Montserrat'] text-xs font-bold uppercase tracking-[0.3em] text-accent">Para seguir la conversación</p>
+        <h2 className="font-['Poppins'] text-3xl font-black leading-tight text-secondary md:text-4xl">
+          ¿Qué te dejó esta historia?
+        </h2>
+        <p className="mt-3 font-['Montserrat'] text-base leading-7 text-foreground/65">
+          Estas preguntas no tienen respuesta correcta. Solo queremos escucharte.
+        </p>
+        <div className="mt-4 h-1 w-14 bg-accent" />
+      </div>
+
+      {submitted && (
+        <motion.div initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} className="mb-6 flex items-center gap-3 rounded-2xl bg-primary/10 px-5 py-4">
+          <Check className="size-5 shrink-0 text-primary" />
+          <p className="font-['Montserrat'] text-sm font-semibold text-primary">¡Gracias! Tu respuesta es parte de la conversación ahora.</p>
+        </motion.div>
+      )}
+
+      <div className="space-y-5">
+        {questions.map((question, qi) => {
+          const qResponses = responses.filter((r) => r.questionIndex === qi);
+          const isOpen = activeQ === qi;
+          const showingResponses = expandedResponses.has(qi);
+
+          return (
+            <motion.div
+              key={qi}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: qi * 0.1 }}
+              className={`overflow-hidden rounded-2xl border transition-all duration-300 ${isOpen ? "border-accent bg-white shadow-lg" : "border-border bg-card hover:border-secondary/40 hover:shadow-sm"}`}
+            >
+              {/* Question header */}
+              <button
+                type="button"
+                onClick={() => setActiveQ(isOpen ? null : qi)}
+                className="flex w-full items-start gap-4 p-6 text-left"
+              >
+                <div className={`mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full font-['Poppins'] text-sm font-black transition ${isOpen ? "bg-accent text-accent-foreground" : "bg-muted text-secondary"}`}>
+                  {qi + 1}
+                </div>
+                <div className="flex-1">
+                  <p className={`font-['Poppins'] text-base font-black leading-snug transition ${isOpen ? "text-secondary" : "text-secondary"}`}>
+                    {question}
+                  </p>
+                  {qResponses.length > 0 && !isOpen && (
+                    <p className="mt-1.5 font-['Montserrat'] text-xs text-muted-foreground">
+                      {qResponses.length} respuesta{qResponses.length !== 1 ? "s" : ""}
+                    </p>
+                  )}
+                </div>
+                <span className={`shrink-0 font-['Montserrat'] text-xs font-bold transition ${isOpen ? "text-accent" : "text-muted-foreground"}`}>
+                  {isOpen ? "▲ Cerrar" : "Responder ↓"}
+                </span>
+              </button>
+
+              {/* Response form + existing responses */}
+              {isOpen && (
+                <div className="border-t border-border px-6 pb-6 pt-5">
+                  <div className="space-y-3">
+                    <textarea
+                      value={text}
+                      onChange={(e) => setText(e.target.value)}
+                      placeholder="Escribe tu respuesta aquí... Puede ser breve o larga, personal o reflexiva."
+                      rows={4}
+                      autoFocus
+                      className="w-full resize-none rounded-xl border border-border bg-[#F9F4EE] px-4 py-3 font-['Montserrat'] text-sm leading-7 text-foreground outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/15"
+                    />
+                    <div className="flex items-center gap-3">
+                      <input
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Tu nombre (opcional)"
+                        className="flex-1 rounded-xl border border-border bg-white px-4 py-2.5 font-['Montserrat'] text-sm outline-none focus:border-secondary"
+                      />
+                      <button
+                        onClick={handleSubmit}
+                        disabled={!text.trim()}
+                        className="flex items-center gap-2 rounded-xl bg-accent px-5 py-2.5 font-['Montserrat'] text-sm font-bold text-accent-foreground transition enabled:hover:brightness-95 disabled:opacity-40"
+                      >
+                        <Send className="size-4" /> Enviar
+                      </button>
+                    </div>
+                    <p className="font-['Montserrat'] text-xs text-muted-foreground">
+                      Tu respuesta puede ser anónima. Al enviar aceptas que puede aparecer en este espacio.
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* Existing responses */}
+              {qResponses.length > 0 && (
+                <div className={`border-t border-border ${isOpen ? "" : ""}`}>
+                  <button
+                    type="button"
+                    onClick={() => toggleResponses(qi)}
+                    className="flex w-full items-center gap-2 px-6 py-3 font-['Montserrat'] text-xs font-bold text-muted-foreground hover:text-secondary"
+                  >
+                    <span className={`transition ${showingResponses ? "rotate-90" : ""}`}>▶</span>
+                    {showingResponses ? "Ocultar" : "Ver"} {qResponses.length} respuesta{qResponses.length !== 1 ? "s" : ""}
+                  </button>
+
+                  {showingResponses && (
+                    <div className="divide-y divide-border border-t border-border">
+                      {qResponses.map((r) => (
+                        <div key={r.id} className="px-6 py-4">
+                          <div className="flex gap-4">
+                            <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-secondary font-['Poppins'] text-sm font-black text-secondary-foreground">
+                              {r.author.charAt(0)}
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2 mb-1">
+                                <p className="font-['Montserrat'] text-sm font-bold text-secondary">{r.author}</p>
+                                <p className="font-['Montserrat'] text-xs text-muted-foreground">{r.date}</p>
+                              </div>
+                              <p className="font-['Montserrat'] text-sm leading-7 text-foreground/80">{r.text}</p>
+                            </div>
+                          </div>
+
+                          {/* Reactions */}
+                          <div className="mt-3 ml-13 flex flex-wrap gap-2 pl-[52px]">
+                            {REACTIONS.map((emoji) => {
+                              const voted = votedReactions[r.id]?.has(emoji);
+                              const count = r.reactions[emoji];
+                              return (
+                                <div key={emoji} className="relative group">
+                                  <button
+                                    type="button"
+                                    onClick={() => toggleReaction(r.id, emoji)}
+                                    className={`flex items-center gap-1.5 rounded-full border px-3 py-1 font-['Montserrat'] text-xs font-semibold transition-all ${voted ? "border-accent bg-accent/10 text-accent" : "border-border bg-white text-muted-foreground hover:border-accent/40 hover:bg-accent/5 hover:text-secondary"}`}
+                                  >
+                                    <span>{emoji}</span>
+                                    {count > 0 && <span className={`tabular-nums ${voted ? "text-accent font-bold" : ""}`}>{count}</span>}
+                                  </button>
+                                  <div className="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-secondary px-2.5 py-1 font-['Montserrat'] text-xs font-semibold text-secondary-foreground opacity-0 shadow-md transition-opacity group-hover:opacity-100">
+                                    {REACTION_LABELS[emoji]}
+                                    <div className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-secondary" />
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+            </motion.div>
+          );
+        })}
+      </div>
+
+    </section>
+  );
+}
+
 function StoryPage({ story, onBack }: { story: Story; onBack: () => void }) {
   return (
     <div className="min-h-screen bg-background">
@@ -966,7 +1209,9 @@ function StoryPage({ story, onBack }: { story: Story; onBack: () => void }) {
             ))}
           </div>
 
-          <div className="mt-16 rounded-[1.5rem] bg-secondary p-8 text-secondary-foreground">
+          <ConversationSection story={story} />
+
+          <div className="mt-12 rounded-[1.5rem] bg-secondary p-8 text-secondary-foreground">
             <p className="font-['Montserrat'] text-xs font-bold uppercase tracking-widest text-[#F2C94C]">¿Tu historia también merece ser contada?</p>
             <h3 className="mt-3 font-['Poppins'] text-3xl font-black leading-tight">Comparte la tuya.</h3>
             <p className="mt-3 font-['Montserrat'] text-sm leading-7 text-secondary-foreground/75">Graba un audio o escríbenos. Puede ser anónimo.</p>
@@ -989,6 +1234,11 @@ const EMPTY_STORY: Omit<Story, "id" | "slug"> = {
   title: "", author: "", date: "", readTime: "", tag: "Resiliencia",
   featured: false, published: false, scheduledAt: "", excerpt: "", body: [""],
   seoDescription: "", seoSlug: "", coverImage: "",
+  questions: [
+    "¿Qué cambió en tu forma de ver este tema después de leer esta historia?",
+    "¿Hay alguna experiencia propia que te hizo pensar diferente?",
+    "¿Qué conversación te gustaría tener a partir de esto?",
+  ],
 };
 
 function slugify(text: string) {
@@ -1377,7 +1627,7 @@ function AdminPanel({ stories, onBack, onSave, onDelete, onTogglePublish, onTogg
 
   const openEdit = (story: Story) => {
     setEditing(story);
-    setForm({ title: story.title, author: story.author, date: story.date, readTime: story.readTime, tag: story.tag, featured: story.featured, published: story.published, scheduledAt: story.scheduledAt ?? "", excerpt: story.excerpt, body: story.body, seoDescription: story.seoDescription ?? "", seoSlug: story.seoSlug ?? "", coverImage: story.coverImage ?? "" });
+    setForm({ title: story.title, author: story.author, date: story.date, readTime: story.readTime, tag: story.tag, featured: story.featured, published: story.published, scheduledAt: story.scheduledAt ?? "", excerpt: story.excerpt, body: story.body, seoDescription: story.seoDescription ?? "", seoSlug: story.seoSlug ?? "", coverImage: story.coverImage ?? "", questions: story.questions ?? [] });
     const html = storyToHtml(story.body);
     setEditorHtml(html);
     setEditorKey((k) => k + 1);
@@ -1918,9 +2168,42 @@ function AdminPanel({ stories, onBack, onSave, onDelete, onTogglePublish, onTogg
                   )}
                 </div>
               </div>
+
+              {/* Questions editor */}
+              <div className="rounded-2xl border border-border bg-white p-5">
+                <p className="mb-1 font-['Montserrat'] text-xs font-bold uppercase tracking-wider text-secondary">Preguntas de conversación</p>
+                <p className="mb-4 font-['Montserrat'] text-xs text-muted-foreground">Aparecen al final del artículo e impulsan el SEO</p>
+                <div className="space-y-2">
+                  {(form.questions ?? []).map((q, qi) => (
+                    <div key={qi} className="flex items-start gap-2">
+                      <span className="mt-2.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-accent/20 font-['Montserrat'] text-xs font-bold text-accent">{qi + 1}</span>
+                      <input
+                        value={q}
+                        onChange={(e) => setForm((f) => ({ ...f, questions: f.questions.map((old, i) => i === qi ? e.target.value : old) }))}
+                        className="flex-1 rounded-lg border border-border px-3 py-2 font-['Montserrat'] text-xs leading-5 outline-none focus:border-secondary"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setForm((f) => ({ ...f, questions: f.questions.filter((_, i) => i !== qi) }))}
+                        className="mt-2 text-muted-foreground hover:text-destructive text-sm"
+                      >✕</button>
+                    </div>
+                  ))}
+                </div>
+                {(form.questions ?? []).length < 4 && (
+                  <button
+                    type="button"
+                    onClick={() => setForm((f) => ({ ...f, questions: [...(f.questions ?? []), ""] }))}
+                    className="mt-3 w-full rounded-xl border border-dashed border-border py-2 font-['Montserrat'] text-xs font-bold text-muted-foreground transition hover:border-accent hover:text-accent"
+                  >
+                    + Agregar pregunta
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         </div>
+
         {previewStory && (
           <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/60 px-4 py-8 backdrop-blur-sm" onClick={() => setPreviewStory(null)}>
             <div className="w-full max-w-2xl" onClick={(e) => e.stopPropagation()}>
