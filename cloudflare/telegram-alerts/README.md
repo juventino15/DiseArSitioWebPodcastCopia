@@ -65,6 +65,23 @@ cualquier dominio en el dashboard, o en Workers & Pages → Overview.
 
 ## 3. Configurar el proyecto
 
+### Opción rápida: un solo comando (recomendada)
+
+Si ya hiciste `wrangler login` en tu Mac, corre el script de instalación:
+
+```bash
+cd cloudflare/telegram-alerts
+./setup.sh
+```
+
+El script hace todo por ti: `npm install`, descubre tu Account ID y los Zone
+IDs de tus dominios automáticamente (con tu API Token), crea el KV namespace,
+rellena `wrangler.toml`, guarda los 4 secrets y despliega. Al final te imprime
+tu URL de webhook para pegarla en el dashboard (paso 6). Si prefieres hacerlo a
+mano, sigue la opción manual de abajo.
+
+### Opción manual
+
 ```bash
 cd cloudflare/telegram-alerts
 npm install
