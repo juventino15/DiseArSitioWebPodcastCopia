@@ -1,0 +1,11 @@
+{
+  "name": "Health Check Status Notification",
+  "alert_type": "health_check_status_notification",
+  "text": "Health check \"contandohistoriaspodcast-home\" para contandohistoriaspodcast.com cambió a UNHEALTHY (origin no responde).",
+  "ts": "2026-07-13T12:00:00Z",
+  "data": {
+    "zone_name": "contandohistoriaspodcast.com",
+    "status": "Unhealthy",
+    "reason": "Connection timed out"
+  }
+}

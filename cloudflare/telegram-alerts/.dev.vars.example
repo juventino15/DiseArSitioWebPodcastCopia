@@ -1,0 +1,7 @@
+# Copia este archivo a ".dev.vars" (que NUNCA se sube a git) y rellena los
+# valores reales para poder correr `wrangler dev` en local.
+
+TELEGRAM_BOT_TOKEN=123456789:AAExampleTokenFromBotFather
+TELEGRAM_CHAT_ID=123456789
+CF_API_TOKEN=tu_api_token_de_cloudflare_solo_lectura
+WEBHOOK_SHARED_SECRET=elige-un-secreto-largo-y-aleatorio

@@ -1,0 +1,51 @@
+name = "telegram-alerts"
+main = "src/index.ts"
+compatibility_date = "2026-07-13"
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+# Crea el namespace con:
+#   wrangler kv namespace create telegram-alerts-kv
+# y pega el "id" que te devuelva aquí abajo.
+[[kv_namespaces]]
+binding = "ALERTS_KV"
+id = "REEMPLAZA_CON_TU_KV_NAMESPACE_ID"
+
+[vars]
+# Nombres de los Workers a monitorear por polling (separados por coma).
+MONITORED_WORKERS = "reviews-api,dalton-seminuevos,financy-worker"
+
+# Dominios a monitorear por polling, formato "dominio:zoneId" separados por coma.
+# El Zone ID de cada dominio está en: dashboard de Cloudflare -> Websites -> clic
+# en el dominio -> panel derecho "Zone ID".
+MONITORED_ZONES = "oficioslocalesmx.com:REEMPLAZA_ZONE_ID,contandohistoriaspodcast.com:REEMPLAZA_ZONE_ID"
+
+# Umbral de tasa de error (%) para disparar una alerta de "high-error-rate".
+ERROR_RATE_THRESHOLD_PCT = "5"
+
+# Mínimo de requests en la ventana para que el cálculo de tasa de error sea
+# significativo (evita falsos positivos con tráfico muy bajo).
+MIN_REQUESTS_FOR_RATE_CHECK = "10"
+
+# Minutos que debe pasar antes de volver a mandar la misma alerta (cooldown).
+ALERT_COOLDOWN_MINUTES = "30"
+
+# Workers que además deben alertar si se quedan sin tráfico (silencio total).
+# Vacío por defecto: reviews-api y dalton-seminuevos pueden tener tráfico
+# naturalmente esporádico y darían falsos positivos.
+SILENCE_CHECK_WORKERS = ""
+SILENCE_THRESHOLD_MINUTES = "60"
+
+# Zonas que además deben alertar si se quedan sin tráfico.
+SILENCE_CHECK_ZONES = ""
+
+# Account ID de Cloudflare (no es secreto). Dashboard -> barra lateral derecha
+# de cualquier dominio, o Workers & Pages -> Overview.
+CF_ACCOUNT_ID = "REEMPLAZA_CON_TU_ACCOUNT_ID"
+
+# Secrets (NO se ponen aquí, se configuran con `wrangler secret put <NOMBRE>`):
+#   TELEGRAM_BOT_TOKEN     - token del bot de @BotFather
+#   TELEGRAM_CHAT_ID       - chat/canal donde se enviarán las alertas
+#   CF_API_TOKEN           - token de Cloudflare de solo lectura (Analytics + Workers Scripts)
+#   WEBHOOK_SHARED_SECRET  - secreto propio para validar la URL del webhook entrante
